@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import ListToDo from "./ToDos/ListToDo";
+import ListToDo from "./ListToDo/ListToDo";
 import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 /**
