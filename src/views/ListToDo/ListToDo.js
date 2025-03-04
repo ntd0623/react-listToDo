@@ -68,61 +68,64 @@ class ListToDo extends React.Component {
     let { listToDo, editToDo } = this.state;
     let isEmptyObj = Object.keys(editToDo).length === 0;
     return (
-      <div className="list-todo-container">
-        <AddToDo addNewToDo={this.addNewToDo} />
-        <div className="list-todo-content">
-          {listToDo &&
-            listToDo.length > 0 &&
-            listToDo.map((item, index) => {
-              return (
-                <div className="todo-child" key={item.id}>
-                  <>
-                    {isEmptyObj === true ? (
-                      <span>
-                        {index + 1} - {item.title}
-                      </span>
-                    ) : (
-                      <>
-                        {item.id === editToDo.id ? (
-                          <span>
-                            {index + 1} -{" "}
-                            <input
-                              type="text"
-                              value={editToDo.title}
-                              onChange={(event) =>
-                                this.handleOnChangeEditToDo(event)
-                              }
-                            />
-                          </span>
-                        ) : (
-                          <span>
-                            {index + 1} - {item.title}{" "}
-                          </span>
-                        )}
-                      </>
-                    )}
-                  </>
-                  <button
-                    className="edit"
-                    onClick={() => this.handleEditToDo(item)}
-                  >
+      <>
+        <p>Hello React with sinhvienIT</p>
+        <div className="list-todo-container">
+          <AddToDo addNewToDo={this.addNewToDo} />
+          <div className="list-todo-content">
+            {listToDo &&
+              listToDo.length > 0 &&
+              listToDo.map((item, index) => {
+                return (
+                  <div className="todo-child" key={item.id}>
                     <>
-                      {isEmptyObj === false && item.id === editToDo.id
-                        ? "Save"
-                        : "Edit"}
+                      {isEmptyObj === true ? (
+                        <span>
+                          {index + 1} - {item.title}
+                        </span>
+                      ) : (
+                        <>
+                          {item.id === editToDo.id ? (
+                            <span>
+                              {index + 1} -{" "}
+                              <input
+                                type="text"
+                                value={editToDo.title}
+                                onChange={(event) =>
+                                  this.handleOnChangeEditToDo(event)
+                                }
+                              />
+                            </span>
+                          ) : (
+                            <span>
+                              {index + 1} - {item.title}{" "}
+                            </span>
+                          )}
+                        </>
+                      )}
                     </>
-                  </button>
-                  <button
-                    className="delete"
-                    onClick={() => this.handleDelete(item)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              );
-            })}
+                    <button
+                      className="edit"
+                      onClick={() => this.handleEditToDo(item)}
+                    >
+                      <>
+                        {isEmptyObj === false && item.id === editToDo.id
+                          ? "Save"
+                          : "Edit"}
+                      </>
+                    </button>
+                    <button
+                      className="delete"
+                      onClick={() => this.handleDelete(item)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                );
+              })}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
