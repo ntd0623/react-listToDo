@@ -8,6 +8,7 @@ class NavigationComponent extends React.Component {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/todo">ToDo</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/user">Users</NavLink>
       </div>
     );
   }
